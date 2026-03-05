@@ -866,7 +866,7 @@
             };
 
             try {
-                const res  = await fetch('/send-inquiry', {
+                const res  = await fetch('https://kreativy-mailer.onrender.com/send-inquiry', {
                     method:  'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body:    JSON.stringify(payload),
