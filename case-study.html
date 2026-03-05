@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreativy - NovaPay Banking Case Study</title>
+    <meta name="description" content="How Kreativy redesigned NovaPay's digital banking app, increasing user engagement by 340% and achieving an 85% onboarding completion rate.">
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        light: '#F9F9F9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .parallax-img {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-white selection:text-black">
+
+    <header id="header" class="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 py-6 md:px-12 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-[1920px] mx-auto">
+            <a href="index.html" class="text-2xl font-display font-bold tracking-tight z-50 mix-blend-difference text-white">
+                Krea<span class="font-light">tivy</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-12">
+                <nav class="flex gap-8 text-sm font-medium tracking-wide">
+                    <a href="index.html#services" class="hover-underline-animation py-1">Services</a>
+                    <a href="projects.html" class="hover-underline-animation py-1 opacity-100">Work</a>
+                    <a href="index.html#process" class="hover-underline-animation py-1">Process</a>
+                    <a href="index.html#about" class="hover-underline-animation py-1">Studio</a>
+                    <a href="index.html#insights" class="hover-underline-animation py-1">Insights</a>
+                </nav>
+                <a href="index.html#contact" class="border border-white/30 rounded-full px-6 py-2 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300 group flex items-center gap-2">
+                    GET IN TOUCH
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-xs"></i>
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="md:hidden z-50 flex flex-col gap-1.5 items-end group">
+                <span class="hamburger-line block w-8 h-0.5 bg-white transition-all"></span>
+                <span class="hamburger-line block w-6 h-0.5 bg-white transition-all"></span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-dark z-40 translate-x-full transition-transform duration-500 flex flex-col justify-center items-center px-6 md:hidden">
+            <nav class="flex flex-col gap-8 text-2xl font-display font-medium text-center">
+                <a href="index.html#services" class="mobile-link">Services</a>
+                <a href="projects.html" class="mobile-link">Work</a>
+                <a href="index.html#process" class="mobile-link">Process</a>
+                <a href="index.html#about" class="mobile-link">Studio</a>
+                <a href="index.html#insights" class="mobile-link">Insights</a>
+                <a href="index.html#contact" class="mobile-link border border-white/30 rounded-full px-8 py-3 text-lg">GET IN TOUCH</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="case-study-hero" class="relative h-[600px] flex items-end px-6 md:px-12 pt-32 pb-16 border-b border-white/10">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-xs px-3 py-1 bg-white/10 rounded-full">FinTech</span>
+                        <span class="text-xs px-3 py-1 bg-white/10 rounded-full">2023</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-500 text-black rounded-full font-medium">
+                            <i class="fa-solid fa-trophy mr-1"></i>Awwwards
+                        </span>
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] font-display font-medium tracking-tight mb-6">
+                        NovaPay Banking
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                        Reimagining digital banking for the next generation through user-centered design and intelligent automation
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-4 text-sm">
+                    <div>
+                        <div class="text-gray-500 mb-1">Client</div>
+                        <div class="font-medium">NovaPay Financial</div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 mb-1">Timeline</div>
+                        <div class="font-medium">6 months</div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 mb-1">Role</div>
+                        <div class="font-medium">Full Product Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hero-image" class="bg-dark py-12 md:py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative rounded-3xl overflow-hidden h-[400px] md:h-[600px]">
+                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3e176ff98d-b7ad731b7db021fc9898.png" alt="Modern fintech mobile banking app dashboard with clean UI, financial charts, transaction history, premium dark theme interface, hero shot, professional photography" />
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div class="lg:col-span-5">
+                    <h2 class="text-4xl md:text-5xl font-display mb-6 leading-tight">The Challenge</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        NovaPay, a rapidly growing digital bank, was facing significant user drop-off rates during their onboarding process and complex transaction flows. Despite having robust financial products, their mobile experience was hindering growth and customer satisfaction.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-500 text-sm mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">68% Drop-off Rate</h4>
+                                <p class="text-sm text-gray-600">Users abandoning onboarding process</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-500 text-sm mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">Complex Navigation</h4>
+                                <p class="text-sm text-gray-600">Users struggling to complete basic tasks</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-500 text-sm mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">High Support Tickets</h4>
+                                <p class="text-sm text-gray-600">Averaging 2,400 tickets per month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <div class="text-5xl font-display font-bold mb-2">340%</div>
+                            <div class="text-sm text-gray-600">Increase in user engagement</div>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <div class="text-5xl font-display font-bold mb-2">60%</div>
+                            <div class="text-sm text-gray-600">Reduction in support tickets</div>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <div class="text-5xl font-display font-bold mb-2">4.8</div>
+                            <div class="text-sm text-gray-600">App Store rating (from 3.2)</div>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-2xl">
+                            <div class="text-5xl font-display font-bold mb-2">85%</div>
+                            <div class="text-sm text-gray-600">Onboarding completion rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discover-phase" class="bg-dark text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    1
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase One</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Discover</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Research Approach</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        We conducted comprehensive user research to understand the pain points, behaviors, and needs of NovaPay's target audience. Our approach combined qualitative and quantitative methods to gather deep insights.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-white/20 pl-6">
+                            <h4 class="font-medium mb-2">User Interviews</h4>
+                            <p class="text-sm text-gray-400">32 in-depth interviews with current and potential users</p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6">
+                            <h4 class="font-medium mb-2">Competitive Analysis</h4>
+                            <p class="text-sm text-gray-400">Evaluated 12 leading digital banking apps</p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6">
+                            <h4 class="font-medium mb-2">Analytics Review</h4>
+                            <p class="text-sm text-gray-400">6 months of user behavior data analysis</p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-6">
+                            <h4 class="font-medium mb-2">Usability Testing</h4>
+                            <p class="text-sm text-gray-400">Current app testing with 24 participants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
+                        <h4 class="text-xl font-display mb-6">Key Insights</h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-lightbulb text-yellow-500"></i>
+                                    <h5 class="font-medium">Trust Barriers</h5>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-6">Users needed more transparency about security measures and data protection during onboarding</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-lightbulb text-yellow-500"></i>
+                                    <h5 class="font-medium">Cognitive Overload</h5>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-6">Too many options and features presented simultaneously overwhelmed new users</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-lightbulb text-yellow-500"></i>
+                                    <h5 class="font-medium">Mobile-First Behavior</h5>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-6">89% of transactions were initiated on mobile devices, requiring optimized mobile experience</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fa-solid fa-lightbulb text-yellow-500"></i>
+                                    <h5 class="font-medium">Need for Control</h5>
+                                </div>
+                                <p class="text-sm text-gray-400 pl-6">Users wanted granular control over notifications and spending insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative rounded-2xl overflow-hidden h-[300px]">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/14f49a23ee-d3d90c27820f3098b10c.png" alt="UX research session with sticky notes, user journey mapping, whiteboard, collaborative design workshop, professional setting" />
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <p class="text-sm font-medium">Research Workshops</p>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden h-[300px]">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/870e0a8a2f-57b33a82fc5b7defab07.png" alt="User persona cards and empathy maps on desk, UX design artifacts, research documentation, modern office" />
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <p class="text-sm font-medium">User Personas</p>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden h-[300px]">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/450f8b9ec7-ef13ea216e4c36cd7a9c.png" alt="Analytics dashboard showing user behavior data, heatmaps, conversion funnels, data visualization on screen" />
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <p class="text-sm font-medium">Data Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="define-phase" class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    2
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase Two</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Define</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Problem Statement</h3>
+                    <div class="bg-gray-50 p-8 rounded-2xl mb-8">
+                        <p class="text-lg leading-relaxed italic">
+                            "How might we create a digital banking experience that builds trust, reduces complexity, and empowers users to manage their finances confidently while maintaining security and compliance?"
+                        </p>
+                    </div>
+
+                    <h4 class="text-xl font-display mb-4">Design Principles</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                                1
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-1">Transparency First</h5>
+                                <p class="text-sm text-gray-600">Clear communication about processes, fees, and security</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                                2
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-1">Progressive Disclosure</h5>
+                                <p class="text-sm text-gray-600">Reveal features gradually to prevent overwhelm</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                                3
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-1">Intelligent Automation</h5>
+                                <p class="text-sm text-gray-600">Smart defaults and predictive features</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                                4
+                            </div>
+                            <div>
+                                <h5 class="font-medium mb-1">Accessible by Design</h5>
+                                <p class="text-sm text-gray-600">WCAG AA compliance and inclusive design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-display mb-6">User Journey Map</h3>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-2 h-2 bg-black rounded-full"></div>
+                                    <h5 class="font-medium">Discovery</h5>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">User learns about NovaPay through ads or referrals</p>
+                                <div class="text-xs text-red-600 flex items-center gap-1">
+                                    <i class="fa-solid fa-face-frown"></i>
+                                    <span>Pain: Skeptical about digital-only banks</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-2 border-gray-300 h-8 ml-1"></div>
+                            
+                            <div>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-2 h-2 bg-black rounded-full"></div>
+                                    <h5 class="font-medium">Onboarding</h5>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Downloads app and starts account creation</p>
+                                <div class="text-xs text-red-600 flex items-center gap-1">
+                                    <i class="fa-solid fa-face-frown"></i>
+                                    <span>Pain: Complex verification process, too many steps</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-2 border-gray-300 h-8 ml-1"></div>
+                            
+                            <div>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-2 h-2 bg-black rounded-full"></div>
+                                    <h5 class="font-medium">First Transaction</h5>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Makes initial deposit and explores features</p>
+                                <div class="text-xs text-red-600 flex items-center gap-1">
+                                    <i class="fa-solid fa-face-frown"></i>
+                                    <span>Pain: Unclear navigation, hidden features</span>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-2 border-gray-300 h-8 ml-1"></div>
+                            
+                            <div>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <div class="w-2 h-2 bg-black rounded-full"></div>
+                                    <h5 class="font-medium">Regular Use</h5>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Daily banking activities and money management</p>
+                                <div class="text-xs text-green-600 flex items-center gap-1">
+                                    <i class="fa-solid fa-face-smile"></i>
+                                    <span>Opportunity: Build habits and loyalty</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-12 rounded-3xl">
+                <h3 class="text-2xl font-display mb-8 text-center">Success Metrics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <i class="fa-solid fa-user-check text-3xl mb-3"></i>
+                        <div class="font-display text-2xl font-bold mb-2">85%</div>
+                        <div class="text-sm text-gray-600">Onboarding Completion</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-clock text-3xl mb-3"></i>
+                        <div class="font-display text-2xl font-bold mb-2">3 min</div>
+                        <div class="text-sm text-gray-600">Average Task Time</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-star text-3xl mb-3"></i>
+                        <div class="font-display text-2xl font-bold mb-2">4.5+</div>
+                        <div class="text-sm text-gray-600">App Store Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-arrow-trend-up text-3xl mb-3"></i>
+                        <div class="font-display text-2xl font-bold mb-2">300%</div>
+                        <div class="text-sm text-gray-600">Engagement Increase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="design-phase" class="bg-dark text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    3
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase Three</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Design</h2>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-display mb-8">Design System Foundation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-palette text-3xl mb-4"></i>
+                        <h4 class="text-xl font-display mb-3">Color Palette</h4>
+                        <p class="text-sm text-gray-400 mb-6">Dark theme with accent colors for hierarchy and trust signals</p>
+                        <div class="flex gap-2">
+                            <div class="w-12 h-12 rounded-lg" style="background: #050505;"></div>
+                            <div class="w-12 h-12 rounded-lg" style="background: #1A1A1A;"></div>
+                            <div class="w-12 h-12 rounded-lg" style="background: #4F46E5;"></div>
+                            <div class="w-12 h-12 rounded-lg" style="background: #10B981;"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-font text-3xl mb-4"></i>
+                        <h4 class="text-xl font-display mb-3">Typography</h4>
+                        <p class="text-sm text-gray-400 mb-6">Inter for UI, Space Grotesk for headlines, optimized for readability</p>
+                        <div class="space-y-2">
+                            <div class="text-2xl font-display">Aa</div>
+                            <div class="text-sm text-gray-400">Space Grotesk</div>
+                            <div class="text-base">Aa</div>
+                            <div class="text-sm text-gray-400">Inter</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                        <i class="fa-solid fa-grid-2 text-3xl mb-4"></i>
+                        <h4 class="text-xl font-display mb-3">Components</h4>
+                        <p class="text-sm text-gray-400 mb-6">Reusable components built for consistency and scalability</p>
+                        <div class="space-y-2">
+                            <div class="bg-white/10 rounded-lg px-4 py-2 text-sm">Button</div>
+                            <div class="bg-white/10 rounded-lg px-4 py-2 text-sm">Card</div>
+                            <div class="bg-white/10 rounded-lg px-4 py-2 text-sm">Input</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-display mb-8">Key Screens</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden h-[500px] mb-4">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/22ae134e12-5abf5a0a48313595e0f8.png" alt="Mobile banking app onboarding screen with step progress indicator, clean minimal design, dark theme, modern fintech UI" />
+                        </div>
+                        <h4 class="text-xl font-display mb-2">Simplified Onboarding</h4>
+                        <p class="text-sm text-gray-400">Reduced from 12 to 5 steps with progressive disclosure and clear progress indicators</p>
+                    </div>
+
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden h-[500px] mb-4">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b30140606a-f9bacbfb7eac441e2129.png" alt="Banking app dashboard home screen with account balance, recent transactions, quick actions, financial insights cards, dark UI" />
+                        </div>
+                        <h4 class="text-xl font-display mb-2">Intelligent Dashboard</h4>
+                        <p class="text-sm text-gray-400">Personalized home screen with contextual actions and AI-powered financial insights</p>
+                    </div>
+
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden h-[500px] mb-4">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a8f00769af-50ca78cf957c827ff75e.png" alt="Mobile payment transfer screen with contact selection, amount input, payment confirmation, smooth transaction flow" />
+                        </div>
+                        <h4 class="text-xl font-display mb-2">Seamless Transfers</h4>
+                        <p class="text-sm text-gray-400">One-tap payments to frequent contacts with biometric authentication</p>
+                    </div>
+
+                    <div>
+                        <div class="relative rounded-2xl overflow-hidden h-[500px] mb-4">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8ac08bdbbe-d399e855bf8b8fd1d5ce.png" alt="Financial analytics screen with spending breakdown charts, budget tracking, savings goals, data visualization" />
+                        </div>
+                        <h4 class="text-xl font-display mb-2">Financial Insights</h4>
+                        <p class="text-sm text-gray-400">Visual spending analytics with actionable recommendations and budget tracking</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-12 rounded-3xl border border-white/10">
+                <h3 class="text-2xl font-display mb-8">Design Decisions</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Dark Theme by Default</h4>
+                                <p class="text-sm text-gray-400">Research showed users preferred dark mode for financial apps, associating it with premium and secure experiences</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Biometric First</h4>
+                                <p class="text-sm text-gray-400">Prioritized Face ID and fingerprint authentication for faster, more secure access</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Contextual Micro-animations</h4>
+                                <p class="text-sm text-gray-400">Added subtle animations to provide feedback and guide user attention</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Smart Notifications</h4>
+                                <p class="text-sm text-gray-400">AI-powered alerts for unusual spending patterns and savings opportunities</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Gesture-Based Navigation</h4>
+                                <p class="text-sm text-gray-400">Swipe actions for common tasks like transaction categorization</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-lightbulb text-yellow-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-2">Accessibility Focus</h4>
+                                <p class="text-sm text-gray-400">High contrast ratios, screen reader support, and haptic feedback</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prototype-phase" class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    4
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase Four</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Prototype</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Interactive Prototyping</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        We built high-fidelity interactive prototypes in Figma to validate our design decisions and gather early feedback from stakeholders and users before development.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fa-solid fa-mobile-screen text-2xl"></i>
+                                <h4 class="font-medium">Mobile Prototype</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-4">Complete user flows with micro-interactions and transitions</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="px-3 py-1 bg-white rounded-full">Onboarding</span>
+                                <span class="px-3 py-1 bg-white rounded-full">Transfers</span>
+                                <span class="px-3 py-1 bg-white rounded-full">Analytics</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fa-solid fa-desktop text-2xl"></i>
+                                <h4 class="font-medium">Web Dashboard</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-4">Desktop experience for detailed financial management</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="px-3 py-1 bg-white rounded-full">Reports</span>
+                                <span class="px-3 py-1 bg-white rounded-full">Settings</span>
+                                <span class="px-3 py-1 bg-white rounded-full">Support</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fa-solid fa-code text-2xl"></i>
+                                <h4 class="font-medium">Developer Handoff</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-4">Detailed specs, assets, and component documentation</p>
+                            <div class="flex gap-2 text-xs">
+                                <span class="px-3 py-1 bg-white rounded-full">Design Tokens</span>
+                                <span class="px-3 py-1 bg-white rounded-full">Components</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative rounded-2xl overflow-hidden h-[600px]">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b602b5c82d-c3dd4c386976e0bcb36f.png" alt="Figma design prototype interface showing mobile banking app screens, design system components, interactive prototype view" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-12 rounded-3xl">
+                <h3 class="text-2xl font-display mb-8 text-center">Prototype Iterations</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4">
+                            v1
+                        </div>
+                        <h4 class="font-medium mb-2">Initial Concept</h4>
+                        <p class="text-sm text-gray-600">Basic flows and screen layouts</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4">
+                            v2
+                        </div>
+                        <h4 class="font-medium mb-2">Refined Design</h4>
+                        <p class="text-sm text-gray-600">Added interactions and animations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4">
+                            v3
+                        </div>
+                        <h4 class="font-medium mb-2">Final Version</h4>
+                        <p class="text-sm text-gray-600">Polished with user feedback</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="test-phase" class="bg-dark text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    5
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase Five</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Test</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Usability Testing</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        We conducted multiple rounds of usability testing with 48 participants across different demographics to validate our design solutions and identify areas for improvement.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-medium">Task Success Rate</h4>
+                                <span class="text-2xl font-display font-bold text-green-500">94%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+
+                        <div class="border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-medium">User Satisfaction</h4>
+                                <span class="text-2xl font-display font-bold text-green-500">4.7/5</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <i class="fa-solid fa-star-half-stroke text-yellow-500"></i>
+                            </div>
+                        </div>
+
+                        <div class="border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-medium">Time on Task</h4>
+                                <span class="text-2xl font-display font-bold text-green-500">-45%</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Average task completion time reduced from 5.2 to 2.8 minutes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Key Findings</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium mb-2">Onboarding Success</h4>
+                                    <p class="text-sm text-gray-400">Users completed onboarding 3x faster with the new simplified flow</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium mb-2">Navigation Clarity</h4>
+                                    <p class="text-sm text-gray-400">96% of users could find key features without assistance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-green-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium mb-2">Trust Indicators</h4>
+                                    <p class="text-sm text-gray-400">Security messaging increased user confidence by 78%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-triangle-exclamation text-yellow-500 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium mb-2">Area for Improvement</h4>
+                                    <p class="text-sm text-gray-400">Some users wanted more detailed transaction categorization options</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-12 rounded-3xl border border-white/10">
+                <h3 class="text-2xl font-display mb-8 text-center">Testing Methods</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <i class="fa-solid fa-user-group text-4xl mb-4"></i>
+                        <h4 class="font-medium mb-2">Moderated Testing</h4>
+                        <p class="text-sm text-gray-400">24 in-person sessions</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-laptop text-4xl mb-4"></i>
+                        <h4 class="font-medium mb-2">Remote Testing</h4>
+                        <p class="text-sm text-gray-400">24 remote sessions</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-chart-line text-4xl mb-4"></i>
+                        <h4 class="font-medium mb-2">A/B Testing</h4>
+                        <p class="text-sm text-gray-400">5 key flow variations</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-eye text-4xl mb-4"></i>
+                        <h4 class="font-medium mb-2">Eye Tracking</h4>
+                        <p class="text-sm text-gray-400">12 participants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="launch-phase" class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold font-display text-xl">
+                    6
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 uppercase tracking-widest mb-1">Phase Six</div>
+                    <h2 class="text-4xl md:text-5xl font-display">Launch</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Phased Rollout Strategy</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        We implemented a strategic phased launch approach to minimize risk and gather real-world feedback before full deployment.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold">
+                                    1
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Beta Launch</h4>
+                                <p class="text-sm text-gray-600 mb-2">Released to 1,000 early adopters for 2 weeks</p>
+                                <div class="text-xs text-green-600">✓ 94% positive feedback</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold">
+                                    2
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Soft Launch</h4>
+                                <p class="text-sm text-gray-600 mb-2">Expanded to 10,000 users with monitoring</p>
+                                <div class="text-xs text-green-600">✓ Minor bug fixes implemented</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold">
+                                    3
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Full Launch</h4>
+                                <p class="text-sm text-gray-600 mb-2">Released to all 250,000+ users</p>
+                                <div class="text-xs text-green-600">✓ Smooth transition achieved</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold">
+                                    4
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Optimization</h4>
+                                <p class="text-sm text-gray-600 mb-2">Continuous monitoring and improvements</p>
+                                <div class="text-xs text-blue-600">→ Ongoing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative rounded-2xl overflow-hidden h-[500px] mb-6">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d05c6fee5b-566de08e0ae65853fe10.png" alt="Product launch celebration with team members, app store screenshots, positive reviews, success metrics dashboard" />
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h4 class="font-medium mb-4">Launch Support</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-green-600"></i>
+                                24/7 customer support team trained
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-green-600"></i>
+                                In-app tutorials and tooltips
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-green-600"></i>
+                                Email campaign to existing users
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-green-600"></i>
+                                Real-time analytics monitoring
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black text-white p-12 rounded-3xl mb-16">
+                <h3 class="text-2xl font-display mb-8 text-center">Post-Launch Metrics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-display font-bold mb-2 text-green-400">340%</div>
+                        <div class="text-sm text-gray-400">User Engagement</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-display font-bold mb-2 text-green-400">60%</div>
+                        <div class="text-sm text-gray-400">Support Reduction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-display font-bold mb-2 text-green-400">4.8</div>
+                        <div class="text-sm text-gray-400">App Store Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-display font-bold mb-2 text-green-400">85%</div>
+                        <div class="text-sm text-gray-400">Onboarding Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <i class="fa-solid fa-quote-left text-3xl text-gray-300 mb-4"></i>
+                    <p class="text-lg mb-6 italic">
+                        "The new NovaPay app is a game-changer. Everything is so intuitive and fast. I actually enjoy managing my finances now!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img class="w-12 h-12 rounded-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="User testimonial" />
+                        <div>
+                            <div class="font-medium">Sarah Johnson</div>
+                            <div class="text-sm text-gray-600">Beta User</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <i class="fa-solid fa-quote-left text-3xl text-gray-300 mb-4"></i>
+                    <p class="text-lg mb-6 italic">
+                        "This redesign exceeded our expectations. The user feedback has been overwhelmingly positive and our KPIs are through the roof."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img class="w-12 h-12 rounded-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg" alt="Client testimonial" />
+                        <div>
+                            <div class="font-medium">Michael Chen</div>
+                            <div class="text-sm text-gray-600">CEO, NovaPay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="results-impact" class="bg-dark text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-display mb-6">The Impact</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Our user-centered approach delivered measurable business results and transformed NovaPay into a market leader
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
+                    <div class="text-6xl font-display font-bold mb-3 text-green-400">340%</div>
+                    <div class="text-sm text-gray-400 mb-2">User Engagement</div>
+                    <p class="text-xs text-gray-500">Daily active users tripled</p>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
+                    <div class="text-6xl font-display font-bold mb-3 text-green-400">85%</div>
+                    <div class="text-sm text-gray-400 mb-2">Onboarding Rate</div>
+                    <p class="text-xs text-gray-500">Up from 32%</p>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
+                    <div class="text-6xl font-display font-bold mb-3 text-green-400">60%</div>
+                    <div class="text-sm text-gray-400 mb-2">Support Reduction</div>
+                    <p class="text-xs text-gray-500">From 2,400 to 960 tickets/month</p>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
+                    <div class="text-6xl font-display font-bold mb-3 text-green-400">4.8</div>
+                    <div class="text-sm text-gray-400 mb-2">App Store Rating</div>
+                    <p class="text-xs text-gray-500">Improved from 3.2</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Business Impact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-arrow-trend-up text-green-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">Revenue Growth</h4>
+                                <p class="text-sm text-gray-400">42% increase in premium subscriptions within 3 months</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-users text-green-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">User Acquisition</h4>
+                                <p class="text-sm text-gray-400">50,000 new users in first month post-launch</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-chart-line text-green-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">Transaction Volume</h4>
+                                <p class="text-sm text-gray-400">$2.4B in transactions processed monthly</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-star text-green-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-medium mb-1">Market Position</h4>
+                                <p class="text-sm text-gray-400">Ranked #1 banking app in app stores</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-display mb-6">Awards & Recognition</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 bg-yellow-500 text-black rounded-full flex items-center justify-center font-bold">
+                                    A
+                                </div>
+                                <h4 class="font-medium">Awwwards</h4>
+                            </div>
+                            <p class="text-sm text-gray-400">Site of the Day, Mobile Excellence</p>
+                        </div>
+
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center font-bold">
+                                    F
+                                </div>
+                                <h4 class="font-medium">FWA</h4>
+                            </div>
+                            <p class="text-sm text-gray-400">Mobile of the Week</p>
+                        </div>
+
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                                    U
+                                </div>
+                                <h4 class="font-medium">UX Design Awards</h4>
+                            </div>
+                            <p class="text-sm text-gray-400">Best Financial App 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-12 rounded-3xl border border-white/10">
+                <h3 class="text-2xl font-display mb-8 text-center">Key Learnings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <i class="fa-solid fa-brain text-3xl mb-4"></i>
+                        <h4 class="font-medium mb-3">User Research is Critical</h4>
+                        <p class="text-sm text-gray-400">Deep understanding of user needs led to breakthrough solutions that analytics alone couldn't reveal</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-rocket text-3xl mb-4"></i>
+                        <h4 class="font-medium mb-3">Iterate Quickly</h4>
+                        <p class="text-sm text-gray-400">Rapid prototyping and testing cycles allowed us to validate ideas before heavy development investment</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-handshake text-3xl mb-4"></i>
+                        <h4 class="font-medium mb-3">Collaborate Closely</h4>
+                        <p class="text-sm text-gray-400">Regular stakeholder alignment and developer collaboration ensured smooth implementation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="next-project" class="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-display mb-4">More Case Studies</h2>
+                <p class="text-xl text-gray-600">Explore our other transformative projects</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="projects.html" class="group">
+                    <div class="relative rounded-2xl overflow-hidden h-[400px] mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/34dce10878-9fdff2b701e5b6b41212.png" alt="Healthcare telemedicine app interface with doctor consultation video call, medical records, modern design" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">Healthcare</span>
+                        <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">2023</span>
+                    </div>
+                    <h3 class="text-2xl font-display mb-2 group-hover:underline">MediConnect Pro</h3>
+                    <p class="text-gray-600">Revolutionizing telemedicine with seamless doctor-patient connections</p>
+                </a>
+
+                <a href="projects.html" class="group">
+                    <div class="relative rounded-2xl overflow-hidden h-[400px] mb-4">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a31a7b63f9-11700b983ffface7e6e5.png" alt="SaaS project management dashboard with kanban boards, team collaboration tools, analytics, modern interface" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">SaaS</span>
+                        <span class="text-xs px-3 py-1 bg-gray-100 rounded-full">2023</span>
+                    </div>
+                    <h3 class="text-2xl font-display mb-2 group-hover:underline">TaskFlow Suite</h3>
+                    <p class="text-gray-600">Streamlining project management for distributed teams</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-contact" class="bg-dark text-white py-24 md:py-32 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-display leading-tight mb-8">
+                Ready to transform<br>
+                your digital<br>
+                <span class="text-gray-500 italic">product?</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Let's discuss how we can apply our proven UX methodology to create exceptional experiences for your users.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-white text-black rounded-full px-8 py-4 font-medium hover:bg-gray-200 transition-colors inline-flex items-center justify-center gap-2 group">
+                    Start Your Project
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                </a>
+                <a href="projects.html" class="border border-white/30 rounded-full px-8 py-4 font-medium hover:bg-white hover:text-black transition-colors inline-flex items-center justify-center gap-2">
+                    View All Projects
+                    <i class="fa-solid fa-grid-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-dark text-white pt-24 pb-12 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-display leading-tight mb-8">
+                        Let's create<br>
+                        something<br>
+                        <span class="text-gray-500">extraordinary.</span>
+                    </h2>
+                </div>
+                
+                <div class="flex items-center lg:justify-end">
+                    <a href="index.html#contact" class="w-40 h-40 bg-white text-black rounded-full flex flex-col items-center justify-center hover:scale-105 transition-transform duration-300 group">
+                        <span class="font-bold text-sm mb-1">GET IN</span>
+                        <span class="font-bold text-sm">TOUCH</span>
+                        <i class="fa-solid fa-arrow-right -rotate-45 mt-2 group-hover:rotate-0 transition-transform duration-300"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end pt-12 border-t border-white/10 gap-12">
+                <div class="w-full md:w-auto">
+                    <h4 class="text-xl mb-6">Stay connected w/ us.</h4>
+                    <form class="flex border-b border-white/30 pb-2 w-full md:w-80">
+                        <input type="email" placeholder="Your email" class="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow">
+                        <button type="submit" class="text-xs uppercase tracking-widest border border-white/30 px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors">Subscribe <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </form>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 md:gap-24 text-right">
+                    <div class="text-left md:text-right">
+                        <h5 class="text-2xl font-display mb-2"><a href="mailto:hello@kreativy.com" class="hover:underline">hello@kreativy.com</a></h5>
+                        <p class="text-gray-500 mb-6">Sydney, Australia</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-2 text-sm text-gray-400 text-left">
+                        <a href="#" class="hover:text-white transition-colors">About</a>
+                        <a href="#" class="hover:text-white transition-colors">Contact</a>
+                        <a href="#" class="hover:text-white transition-colors">Projects</a>
+                        <a href="#" class="hover:text-white transition-colors">Blogs</a>
+                        <a href="#" class="hover:text-white transition-colors">Services</a>
+                        <a href="#" class="hover:text-white transition-colors">Careers</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center mt-24 pt-8 border-t border-white/5 text-xs text-gray-500 uppercase tracking-widest">
+                <div class="flex gap-6 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-white transition-colors">Behance</a>
+                    <a href="#" class="hover:text-white transition-colors">Dribbble</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                </div>
+                <div>
+                    &copy; 2025 Kreativy | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLines = document.querySelectorAll('.hamburger-line');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+            menuLines[0].classList.toggle('rotate-45');
+            menuLines[0].classList.toggle('translate-y-1');
+            menuLines[1].classList.toggle('-rotate-45');
+            menuLines[1].classList.toggle('-translate-y-1');
+            menuLines[1].classList.toggle('w-8');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // Header scroll shrink
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                header.classList.add('py-3');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.add('py-6');
+                header.classList.remove('py-3');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
